@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9=j)@ez!b5nj^^cf(7_pgahihi$qzby(osz&33p7r0001uoa&b'
+SECRET_KEY = 'django-insecure-4lmd25@#z%-03b#w8becsi099)0oc#v45*$l@ghk$nbgnwhrcq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,40 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # The following apps are required:
-    'django.contrib.sites',
-
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    # ... include the providers you want to enable:
-    'allauth.socialaccount.providers.agave',
-    'allauth.socialaccount.providers.amazon',
-    'allauth.socialaccount.providers.amazon_cognito',
-    'allauth.socialaccount.providers.angellist',
-    'allauth.socialaccount.providers.apple',
-    'allauth.socialaccount.providers.asana',
-    'allauth.socialaccount.providers.auth0',
-    'allauth.socialaccount.providers.authentiq',
-    'allauth.socialaccount.providers.azure',
 ]
-
-SITE_ID = 1
-
-# Provider specific settings
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
-}
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -95,8 +62,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request',
-
             ],
         },
     },
@@ -115,14 +80,6 @@ DATABASES = {
     }
 }
 
-AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
